@@ -1,0 +1,43 @@
+body{
+    background: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Cambio de checkbot */
+.formulario input[type="checkbox"]{
+    display: none;
+}
+.formulario .checkbox label{
+    padding: 5px 10px 5px 30px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.formulario .checkbox label:hover{
+    background: rgba(0, 166, 217, 0.3);
+}
+.formulario .checkbox label:before{
+    content: "";
+    width: 13px;
+    height: 13px;
+    border-radius: 3px;
+    display: inline-block;
+    background: none;
+    position: absolute;
+    border: 2px solid #0074d9; 
+    left: 10px;
+}
+.formulario input[type="checkbox"]:checked + label{
+    padding: 5px 10px;
+    background: #11328d7c;
+    border-radius: 1px;
+    color: #fff;
+}
+.formulario input[type="checkbox"]:checked + label:before{
+    display: none;
+}
+/*                */

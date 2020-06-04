@@ -4,7 +4,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 		<link rel="icon" type="image/png" href="Img\logo.png">
+		<link rel="stylesheet" href="css/estilo.css">
 		<title>Formulario</title>
 	</head>
 	
@@ -26,7 +28,7 @@
 		</header>
 
 
-		<form>
+		<form action="" class="formulario">
 			<center>
 				<table border="1" WIDTH="770" bgcolor="#C8CAD5">
 					<tr>
@@ -35,7 +37,7 @@
 					</tr>
 				</table>
 			
-			<table border="1"><tr><td>
+			<table class="tabla2" border="1"><tr><td>
 				<table>
 					<tr>
 						<td>Nombre</td>
@@ -109,16 +111,18 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="checkbox" id="Esposo">
-							<label for="Esposo" >Esposo/a</label>
-							<input type="checkbox" id="Hijos">
-							<label for="Hijos" >Hijos</label>
-							<input type="checkbox" id="Hermano">
-							<label for="Hermano" >Hermano/a</label>
-							<input type="checkbox" id="Padres">
-							<label for="Padres" >Padres</label>
-							<input type="checkbox" id="Otros">
-    						<label for="Otros" >Otros</label>
+							<div class="checkbox">
+								<input type="checkbox" name="Esposo" id="Esposo">
+								<label for="Esposo" >Esposo/a</label>
+								<input type="checkbox" name="Hijos" id="Hijos">
+								<label for="Hijos" >Hijos</label>
+								<input type="checkbox" name="Hermano" id="Hermano">
+								<label for="Hermano" >Hermano/a</label>
+								<input type="checkbox" name="Padres" id="Padres">
+								<label for="Padres" >Padres</label>
+								<input type="checkbox" name="Otros" id="Otros">
+								<label for="Otros" >Otros</label>
+							</div>
 						</td>
 					</tr>
 				</table>
