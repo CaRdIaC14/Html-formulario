@@ -25,168 +25,164 @@
 				</nav>
 			</header>
 		
-		<div  class="formulario">
-			<div id="titulo">
-				<h2>Solicitud de empleo</h2>
-			</div>
-			<div id="titulo2">
-				<h3>1. Datos personales:</h3>	
-			</div>
+			<div  class="formulario">
+				<div id="titulo">
+					<h2>Solicitud de empleo</h2>
+				</div>
+				<div id="subTitulo">
+					<h3>1. Datos personales:</h3>	
+				</div>
 
-			<form action="" class="datosPersonales">
-				<p>
-					<label for="nombre">Nombre:</label>
-					<input type="text" name="nombre"id="nombre" placeholder="Juan"  required>
-				</p>
-				<p>
-					<label for="apellido">Apellido:</label>
-					<input type="text" name="apellido" id="apellido" placeholder="Perez" required>
-				</p>
-				<p>
-					<label for="nacimiento">Fecha de nacimiento:</label>
-					<input type="date" name="nacimiento"id="nacimiento value="01-01-2020" " required>
-				</p>
-				<p>
-					<label for="rut">Rut:</label>
-					<input type="text" name="rut" id="rut" placeholder="12.345.678-9" maxlength="12" required >
-				</p>
-				<p>
-					<label for="telefono">Telefono:</label>
-					<input type="tel" id="telefono" id="telefono" name="telefono" pattern="[0-9]{4}-[0-9]{4}">
-				</p>
-				<p>
-					<label for="direccion">Direccion actual:</label>	
-					<input type="text" name="direccion" id="direccion" placeholder=" calle 123 poblacion"  required>
-				</p>
-				<p>
-					<label for="nacionalidad">Nacionalidad:</label>
-					<input type="text" id="nacionalidad" name="nacionalidad"  required>
-				</p>
-				<p>
-					<label for="grado">Grado de estudio:</label>
-					<input type="text" name="grado" id="grado"  required>
-				</p>
-				<p class="block">
-					<label for="civil">Estado civil:</label>
+				<form action="" class="datosPersonales">
+					<p>
+						<label for="nombre">Nombre:</label>
+						<input type="text" name="nombre"id="nombre" placeholder="Juan"  required>
+					</p>
+					<p>
+						<label for="apellido">Apellido:</label>
+						<input type="text" name="apellido" id="apellido" placeholder="Perez" required>
+					</p>
+					<p>
+						<label for="nacimiento">Fecha de nacimiento:</label>
+						<input type="date" name="nacimiento"id="nacimiento value="01-01-2020" " required>
+					</p>
+					<p>
+						<label for="rut">Rut:</label>
+						<input type="text" name="rut" id="rut" placeholder="12.345.678-9" maxlength="12" required >
+					</p>
+					<p>
+						<label for="telefono">Telefono:</label>
+						<input type="tel" id="telefono" id="telefono" name="telefono" pattern="[0-9]{4}-[0-9]{4}">
+					</p>
+					<p>
+						<label for="direccion">Direccion actual:</label>	
+						<input type="text" name="direccion" id="direccion" placeholder=" calle 123 poblacion"  required>
+					</p>
+					<p>
+						<label for="nacionalidad">Nacionalidad:</label>
+						<input type="text" id="nacionalidad" name="nacionalidad"  required>
+					</p>
+					<p>
+						<label for="grado">Grado de estudio:</label>
+						<input type="text" name="grado" id="grado"  required>
+					</p>
+					<p class="block">
+						<label for="civil">Estado civil:</label>
+						<div class="radio">
+							<input type="radio" name="EstadoCivil" id="soltero">
+							<label for="soltero">Soltero</label>
+							<input type="radio" name="EstadoCivil"id="casado">
+							<label for="casado">Casado</label>
+							<input type="radio" name="EstadoCivil" id ="otro">
+							<label for="otro">Otro</label>
+						</div>
+					</p>
+					<p class=" block">
+						<label for="Vive">Vive con:</label>
+						<div class="radio">
+							<input type="radio" name="Vive" id ="solo">
+							<label for="solo">Solo/a</label>
+							<input type="radio" name="Vive"id ="padres">
+							<label for="padres">Padres</label>
+							<input type="radio" name="Vive"id ="Familiares">
+							<label for="familiares">Familiares</label>
+							<input type="radio" name="Vive"id ="otros">
+							<label for="otros">Otro</label>
+						</div>
+					</p>
+					<p class="block2">
+						<label for="depende">Personas que dependen de usted:</label>
+						<div class="checkbox">
+							<input type="checkbox" name="Esposo" id="Esposo">
+							<label for="Esposo" >Esposo/a</label>
+							<input type="checkbox" name="Hijos" id="Hijos">
+							<label for="Hijos" >Hijos</label>
+							<input type="checkbox" name="Hermano" id="Hermano">
+							<label for="Hermano" >Hermano/a</label>
+							<input type="checkbox" name="Padres" id="Padres">
+							<label for="Padres" >Padres</label>
+							<input type="checkbox" name="Otros" id="Otros">
+							<label for="Otros" >Otros</label>
+						</div>
+					</p>
+				</form>
+
+				<div id="subTitulo">
+					<h3>2. Estado de salud</h3>
+				</div>
+				<form class="estadSalud">
+					<b>Alguna enfermedad crónica</b>
 					<div class="radio">
-						<input type="radio" name="EstadoCivil" id="soltero">
-						<label for="soltero">Soltero</label>
-						<input type="radio" name="EstadoCivil"id="casado">
-						<label for="casado">Casado</label>
-						<input type="radio" name="EstadoCivil" id ="otro">
-						<label for="otro">Otro</label>
+						<input type="radio" name="siNo" id="si">
+						<label for="si">No</label>
+						<input type="radio" name="siNo" id="no">
+						<label for="no">Si (Explique)</label>
 					</div>
-				</p>
-				<p class=" block">
-					<label for="Vive">Vive con:</label>
-					<div class="radio">
-						<input type="radio" name="Vive" id ="solo">
-						<label for="solo">Solo/a</label>
-						<input type="radio" name="Vive"id ="padres">
-						<label for="padres">Padres</label>
-						<input type="radio" name="Vive"id ="Familiares">
-						<label for="familiares">Familiares</label>
-						<input type="radio" name="Vive"id ="otros">
-						<label for="otros">Otro</label>
-					</div>
-				</p>
-				<p class="block2">
-					<label for="depende">Personas que dependen de usted:</label>
-					<div class="checkbox">
-						<input type="checkbox" name="Esposo" id="Esposo">
-						<label for="Esposo" >Esposo/a</label>
-						<input type="checkbox" name="Hijos" id="Hijos">
-						<label for="Hijos" >Hijos</label>
-						<input type="checkbox" name="Hermano" id="Hermano">
-						<label for="Hermano" >Hermano/a</label>
-						<input type="checkbox" name="Padres" id="Padres">
-						<label for="Padres" >Padres</label>
-						<input type="checkbox" name="Otros" id="Otros">
-						<label for="Otros" >Otros</label>
-				</p>
-				<!-- <table border="1" WIDTH="770" bgcolor="#C8CAD5">
-					<tr>
-						<td>
-							<h3>Estado de salud </h3></td>
-					</tr>
-				</table>
-				<table border="1" WIDTH="770"><tr><td>
-					<table>
+					<textarea name="explicacion" id="textArea" ></textarea>
+				</form>
+					
+			
+					<!-- <table border="1" width="770" bgcolor="#C8CAD5">
 						<tr>
 							<td>
-								Alguna enfermedad crónica: <br><br>
-								<input type="radio" name="SiNo" id="">No
-								<input type="radio" name="SiNo" id="">Si (Explique)
-							</td>
-							<td>
-								<textarea cols="77" rows="3"></textarea>
-							</td>
+								<h3>Estudios</h3></td>
 						</tr>
 					</table>
-				</td></tr></table>
+					<table border="1" WIDTH="770"><tr><td>
+						<table>
+							<tr>
+								<td></td>
+								<td>Nombre escuela</td>
+								<td>Años que estudio</td>
+								<td>Certificado</td>	
+							</tr>
+							
+							<tr>
+								<td>
+									Enseñansa basica:
+								</td>
+								<td>
+									<input type="text" required>
+								</td>
+								<td>
+									<input type="text" required>
+								</td>
+								<td>
+									<input type="file" required>
+								</td>
+							</tr>
+
+							<tr>
+								<td>Enseñansa Media:</td>
+								<td>
+									<input type="text" required >
+								</td>
+								<td>
+									<input type="text" required >
+								</td>
+								<td>
+									<input type="file" required>
+								</td>
+							</tr>
+							
+							<tr>
+								<td>Enseñansa Superior:</td>
+								<td>
+									<input type="text" required>
+								</td>
+								<td>
+									<input type="text" required>
+								</td>
+								<td>
+									<input type="file" required>
+								</td>
+							</tr>
+
+						</table>
+					</td></tr></table>
+					<br>
+					<input type="submit" value="Enviar formulario"> -->
 			</div>
-				<table border="1" width="770" bgcolor="#C8CAD5">
-					<tr>
-						<td>
-							<h3>Estudios</h3></td>
-					</tr>
-				</table>
-				<table border="1" WIDTH="770"><tr><td>
-					<table>
-						<tr>
-							<td></td>
-							<td>Nombre escuela</td>
-							<td>Años que estudio</td>
-							<td>Certificado</td>	
-						</tr>
-						
-						<tr>
-							<td>
-								Enseñansa basica:
-							</td>
-							<td>
-								<input type="text" required>
-							</td>
-							<td>
-								<input type="text" required>
-							</td>
-							<td>
-								<input type="file" required>
-							</td>
-						</tr>
-
-						<tr>
-							<td>Enseñansa Media:</td>
-							<td>
-								<input type="text" required >
-							</td>
-							<td>
-								<input type="text" required >
-							</td>
-							<td>
-								<input type="file" required>
-							</td>
-						</tr>
-						
-						<tr>
-							<td>Enseñansa Superior:</td>
-							<td>
-								<input type="text" required>
-							</td>
-							<td>
-								<input type="text" required>
-							</td>
-							<td>
-								<input type="file" required>
-							</td>
-						</tr>
-
-					</table>
-				</td></tr></table>
-				<br>
-				<input type="submit" value="Enviar formulario">
-			 -->
-		</form>
 		</div>
 	</body>
 </html> 
