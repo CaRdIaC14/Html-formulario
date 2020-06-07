@@ -90,7 +90,7 @@
 							<label for="otros">Otro</label>
 						</div>
 					</p>
-					<p class="block2">
+					<p class="block">
 						<label for="depende">Personas que dependen de usted:</label>
 						<div class="checkbox">
 							<input type="checkbox" name="Esposo" id="Esposo">
@@ -110,7 +110,7 @@
 				<div id="subTitulo">
 					<h3>2. Estado de salud</h3>
 				</div>
-				<form class="estadSalud">
+				<form action="" class="estadSalud">
 					<b>Alguna enfermedad crónica</b>
 					<div class="radio">
 						<input type="radio" name="siNo" id="si">
@@ -121,67 +121,47 @@
 					<textarea name="explicacion" id="textArea" ></textarea>
 				</form>
 					
-			
-					<!-- <table border="1" width="770" bgcolor="#C8CAD5">
-						<tr>
-							<td>
-								<h3>Estudios</h3></td>
-						</tr>
-					</table>
-					<table border="1" WIDTH="770"><tr><td>
-						<table>
-							<tr>
-								<td></td>
-								<td>Nombre escuela</td>
-								<td>Años que estudio</td>
-								<td>Certificado</td>	
-							</tr>
-							
-							<tr>
-								<td>
-									Enseñansa basica:
-								</td>
-								<td>
-									<input type="text" required>
-								</td>
-								<td>
-									<input type="text" required>
-								</td>
-								<td>
-									<input type="file" required>
-								</td>
-							</tr>
+				<div id ="subTitulo">
+					<h3>3. Estudios</h3>
+				</div>
 
-							<tr>
-								<td>Enseñansa Media:</td>
-								<td>
-									<input type="text" required >
-								</td>
-								<td>
-									<input type="text" required >
-								</td>
-								<td>
-									<input type="file" required>
-								</td>
-							</tr>
-							
-							<tr>
-								<td>Enseñansa Superior:</td>
-								<td>
-									<input type="text" required>
-								</td>
-								<td>
-									<input type="text" required>
-								</td>
-								<td>
-									<input type="file" required>
-								</td>
-							</tr>
-
-						</table>
-					</td></tr></table>
-					<br>
-					<input type="submit" value="Enviar formulario"> -->
+				<form action="" class="estudios">
+					<a> <br>
+						<p id="Enseñansa">Enseñansa basica:</p>
+						<p id="Enseñansa">Enseñansa media:</p>
+						<p id="Enseñansa">Enseñansa superior:</p>
+					</a>
+					<a> 
+						<p>Nombre escuela</p>
+						<p><input type="text" required></p>
+						<p><input type="text" required></p>
+						<p><input type="text" required></p>
+					</a>
+					<a >
+						<p >Años de estudios</p>
+						<p ><input type="text" required></p>
+						<p ><input type="text" required></p>
+						<p ><input type="text" required></p>
+						
+						
+						
+					</a>
+					<a >Certificado
+						<div id="enviarArchivo">
+							<p id="text">Añadir</p>
+							<input type="file" id="certidicacionBasica" required>
+						</div>
+						<div id="enviarArchivo">
+							<p id="text">Añadir</p>
+							<input type="file" id="certificacionMedia" required>
+						</div>
+						<input type="file" required>
+						<div id="enviarArchivo">
+							<p id="text">Añadir</p>
+							<input type="file" id="CertificadacionSuperior" required>
+						</div>
+					</a>
+				</form>
 			</div>
 		</div>
 	</body>
