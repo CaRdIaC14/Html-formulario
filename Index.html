@@ -18,14 +18,14 @@
 				</div>
 				<nav class="menu">
 					<ul>
-						<li><a href="asd.html">Enalece 1</a></li>
-						<li><a href="asd.html">Enalece 2</a></li>
-						<li><a href="asd.html">Enalece 3</a></li>
+						<li><a href="asd.html">Enlace 1</a></li>
+						<li><a href="asd.html">Enlace 2</a></li>
+						<li><a href="asd.html">Enlace 3</a></li>
 					</ul>
 				</nav>
 			</header>
 		
-			<div  class="formulario">
+			<form action="" class="formulario">
 				<div id="titulo">
 					<h2>Solicitud de empleo</h2>
 				</div>
@@ -33,7 +33,7 @@
 					<h3>1. Datos personales:</h3>	
 				</div>
 
-				<form action="" class="datosPersonales">
+				<div class="datosPersonales">
 					<p>
 						<label for="nombre">Nombre:</label>
 						<input type="text" name="nombre"id="nombre" placeholder="Juan"  required>
@@ -84,7 +84,7 @@
 							<label for="solo">Solo/a</label>
 							<input type="radio" name="Vive"id ="padres">
 							<label for="padres">Padres</label>
-							<input type="radio" name="Vive"id ="Familiares">
+							<input type="radio" name="Vive"id ="familiares">
 							<label for="familiares">Familiares</label>
 							<input type="radio" name="Vive"id ="otros">
 							<label for="otros">Otro</label>
@@ -105,12 +105,12 @@
 							<label for="Otros" >Otros</label>
 						</div>
 					</p>
-				</form>
+				</div>
 
 				<div id="subTitulo">
 					<h3>2. Estado de salud</h3>
 				</div>
-				<form action="" class="estadSalud">
+				<div class="estadSalud">
 					<b>Alguna enfermedad crónica:</b>
 					<div class="radio">
 						<input type="radio" name="siNo" id="si">
@@ -119,50 +119,52 @@
 						<label for="no">Si (Explique)</label>
 					</div>
 					<textarea name="explicacion" id="textArea" ></textarea>
-				</form>
+				</div>
 					
 				<div id ="subTitulo">
 					<h3>3. Estudios</h3>
 				</div>
 
-				<form action="" class="estudios">
-					<a> <br>
-						<p4>Enseñansa basica:</p4>
-						<p4>Enseñansa media:</p4>
-						<p4>Enseñansa superior:</p4>
-					</a>
-					<a> 
-						<p4>Nombre escuela</p4>
-						<p4><input type="text" name="enseBasica"required></p4>
-						<p4><input type="text" name="enseMedia"required></p4>
-						<p4><input type="text" name="enseSuperior"required></p4>
-					</a>
-					<a >
-						<p4 >Años de estudios</p4>
+				<div class="estudios">
+					<a>
+						<h4>Enseñansa basica:</h4>
+						<p4>Nombre escuela:</p4>
+						<p4><input type="text" name="escuelaBasica"required></p4>
+						<br>
+						<p4 >Años de estudios:</p4>
 						<p4 ><input type="text" name="anioBasica" required></p4>
-						<p4 ><input type="text" name="anioMedia" required></p4>
-						<p4 ><input type="text" name="anioSuperior" required></p4>
-						
-						
-						
-					</a>
-					<a >Certificado
+						<p4>Certificado</p4>
 						<div id="enviarArchivo">
 							<p5 id="text">Añadir</p5>
 							<input type="file" id="certidicacionBasica" name="certidicacionBasica" required>
 						</div>
+					</a>
+					<a> 
+						<h4>Enseñansa media:</h4>
+						<p4>Nombre escuela</p4>
+						<p4><input type="text" name="escuelaMedia"required></p4>
+						<p4 >Años de estudios:</p4>
+						<p4 ><input type="text" name="anioMedia" required></p4>
+						<p4>Certificado</p4>
 						<div id="enviarArchivo">
 							<p5 id="text">Añadir</p5>
-							<input type="file" id="certificacionMedia" name="certidicacionBasica" required>
-						</div>
-						<input type="file" required>
-						<div id="enviarArchivo">
-							<p5 id="text">Añadir</p5>
-							<input type="file" id="CertificadacionSuperior" name="certidicacionBasica" required>
+							<input type="file" id="certificacionMedia" name="certificacionMedia" required>
 						</div>
 					</a>
-				</form>
-			</div>
+					<a >
+						<h4>Enseñansa Superior:</h4>
+						<p4>Nombre Universidad:</p4>
+						<p4><input type="text" name="universidad"required></p4>
+						<p4 >Años de estudios:</p4>
+						<p4 ><input type="text" name="anioSuperior" required></p4>
+						<p4>Certificado</p4>
+						<div id="enviarArchivo">
+							<p5 id="text">Añadir</p5>
+							<input type="file" id="CertificadacionSuperior" name="CertificadacionSuperior" required>
+						</div>
+					</a>
+				</div>
+			</form>
 		</div>
 	</body>
 </html> 
