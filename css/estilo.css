@@ -1,14 +1,12 @@
 body{
-    
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(122,180,231,0.3);
+    background-color: rgb(122,180,231,0.2);
 }
 
 #principal{
     width: 900px;
     height: 1700px;
     margin: auto;
-    background-color: ;
 }
 
 header{
@@ -97,7 +95,7 @@ header{
     background-color: #7ab4e793;
 }
 
-/* Cambio de checkbot y radio*/
+/*---- Cambio de checkbot y radio-----------*/
 
 .formulario input[type="checkbox"],
 .formulario input[type="radio"]{
@@ -145,7 +143,7 @@ header{
 .formulario input[type="radio"]:checked + label:before{
     display: none;
 }
-/*                */
+/*-----------------------------------------*/
 
 
 b{
