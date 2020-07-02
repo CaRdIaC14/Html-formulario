@@ -7,6 +7,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 		<link rel="icon" type="image/png" href="Img\logo.png">
 		<link rel="stylesheet" href="css/estilo.css">
+		<link rel="stylesheet" href="bootstrap4/css/bootstrap-reboot.min.css">
+		<link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css">
 		<title>Formulario</title>
 	</head>
 	
@@ -110,62 +112,67 @@
 				<div id="subTitulo">
 					<h3>2. ESTADO DE SALUD:</h3>
 				</div>
-				<div class="estadSalud">
+				<div class="salud">
 					<b>Alguna enfermedad crónica:</b>
-					<div class="radio">
-						<input type="radio" name="siNo" id="si">
-						<label for="si">No</label>
-						<input type="radio" name="siNo" id="no">
-						<label for="no">Si (Explique)</label>
+					<div class="main row">
+						<div class="col-md-0"></div>
+						<div class="col-md-4">
+							<div class="radio">
+								<input type="radio" name="siNo" id="si">
+								<label for="si">No</label>
+								<input type="radio" name="siNo" id="no">
+								<label for="no">Si (Explique)</label>
+							</div>
+						</div>
+						<div class="col-md-8">
+							<textarea name="explicacion" id="textArea" ></textarea>
+						</div>	
 					</div>
-					<textarea name="explicacion" id="textArea" ></textarea>
 				</div>
 					
 				<div id ="subTitulo">
 					<h3>3. ESTUDIOS:</h3>
 				</div>
-
-				<div class="estudios">	
-					<a>
-						<h4>Enseñansa basica:</h4>
-						
-						<p4>Nombre escuela:</p4>
-						<p4><input type="text" name="escuelaBasica"required></p4>
-						<p4 >Años de estudios:</p4>
-						<p4 ><input type="text" name="anioBasica" required></p4>
-						<p4>Certificado</p4>
-						<div id="enviarArchivo">
-							<p5 id="text">Añadir</p5>
-							<input type="file" id="certidicacionBasica" name="certidicacionBasica" required>
+				<div class="estudios">
+					<div class="main row">	
+						<div class="col-md-4">
+							<h4>Enseñanza basica:</h4>
+							<a>Nombre escuela:</a>
+							<input type="text" name="escuelaBasica"required>
+							<br>
+							<a>Años de estudios:</a>
+							<input type="text" name="anioBasica" required>
+							<br>
+							<a>Certificado</a>
+							<input type="file" value="Enviar" class="btn-sm btn-block btn-primary" required>
 						</div>
-					</a>
-					<a> 
-						<h4>Enseñansa media:</h4>
-						<p4>Nombre escuela</p4>
-						<p4><input type="text" name="escuelaMedia"required></p4>
-						<p4 >Años de estudios:</p4>
-						<p4 ><input type="text" name="anioMedia" required></p4>
-						<p4>Certificado</p4>
-						<div id="enviarArchivo">
-							<p5 id="text">Añadir</p5>
-							<input type="file" id="certificacionMedia" name="certificacionMedia" required>
+						<div class="col-md-4"> 
+							<h4>Enseñanza media:</h4>
+							<a>Nombre escuela</a>
+							<input type="text" name="escuelaMedia"required>
+							<br>
+							<a>Años de estudios:</a>
+							<input type="text" name="anioMedia" required>
+							<br>
+							<a>Certificado</a>
+							<input type="file" value="Enviar" class="btn-sm btn-block btn-primary" id="certificacionMedia" name="certificacionMedia" required>
 						</div>
-					</a>
-					<a >
-						<h4>Enseñansa Superior:</h4>
-						<p4>Nombre Universidad:</p4>
-						<p4><input type="text" name="universidad"required></p4>
-						<p4 >Años de estudios:</p4>
-						<p4 ><input type="text" name="anioSuperior" required></p4>
-						<p4>Certificado</p4>
-						<div id="enviarArchivo">
-							<p5 id="text">Añadir</p5>
-							<input type="file" id="CertificadacionSuperior" name="CertificadacionSuperior" required>
+						<div class="col-md-4">
+							<h4>Enseñanza Superior:</h4>
+							<a>Nombre Universidad:</a>
+							<input type="text" name="universidad"required>
+							<br>
+							<a>Años de estudios:</a>
+							<input type="text" name="anioSuperior" required>
+							<br>
+							<a>Certificado</a>
+							<input type="file" class="btn-sm btn-block btn-primary" id="CertificadacionSuperior" name="CertificadacionSuperior" required>
 						</div>
-					</a>
+					</div>
 				</div>
 			</form>
-			<input type="submit" value="Enviar" name="enviar">
+			<br>
+			<input type="submit" value="Enviar" class="btn btn-block btn-primary" id="enviar">
 		</div>
 	</body>
 </html> 
