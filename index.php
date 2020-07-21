@@ -27,7 +27,7 @@
 				</nav>
 			</header>
 		
-			<form action="" class="formulario">
+			<form action="insertarBD.php" method="POST" class="formulario">
 				<div id="titulo">
 					<h2>Solicitud de Empleo</h2>
 				</div>
@@ -54,7 +54,7 @@
 					</p>
 					<p>
 						<label for="telefono">Telefono:</label>
-						<input type="tel" id="telefono" id="telefono" name="telefono" pattern="[0-9]{4}-[0-9]{4}">
+						<input type="tel" id="telefono" id="telefono" name="telefono"placeholder="12345678" pattern="[0-9]{8}">
 					</p>
 					<p>
 						<label for="direccion">Direccion actual:</label>	
@@ -71,39 +71,39 @@
 					<p class="block">
 						<label for="civil">Estado civil:</label>
 						<div class="radio">
-							<input type="radio" name="EstadoCivil" id="soltero">
+							<input type="radio" name="estadoCivil"  id="soltero" value="soltero">
 							<label for="soltero">Soltero</label>
-							<input type="radio" name="EstadoCivil"id="casado">
+							<input type="radio" name="estadoCivil"id="casado" value="casado">
 							<label for="casado">Casado</label>
-							<input type="radio" name="EstadoCivil" id ="otro">
+							<input type="radio" name="estadoCivil" id ="otro" value="otro">
 							<label for="otro">Otro</label>
 						</div>
 					</p>
 					<p class=" block">
 						<label for="Vive">Vive con:</label>
 						<div class="radio">
-							<input type="radio" name="Vive" id ="solo">
+							<input type="radio" name="vive" id ="solo" value="solo">
 							<label for="solo">Solo/a</label>
-							<input type="radio" name="Vive"id ="padres">
+							<input type="radio" name="vive"id ="padres" value="padres">
 							<label for="padres">Padres</label>
-							<input type="radio" name="Vive"id ="familiares">
+							<input type="radio" name="vive"id ="familiares" value="familiares">
 							<label for="familiares">Familiares</label>
-							<input type="radio" name="Vive"id ="otros">
+							<input type="radio" name="vive"id ="otros" value="otros">
 							<label for="otros">Otro</label>
 						</div>
 					</p>
 					<p class="block">
 						<label for="depende">Personas que dependen de usted:</label>
 						<div class="checkbox">
-							<input type="checkbox" name="Esposo" id="Esposo">
+							<input type="checkbox" name="depende[]" id="Esposo" value="esposo">
 							<label for="Esposo" >Esposo/a</label>
-							<input type="checkbox" name="Hijos" id="Hijos">
+							<input type="checkbox" name="depende[]" id="Hijos" value="hijos">
 							<label for="Hijos" >Hijos</label>
-							<input type="checkbox" name="Hermano" id="Hermano">
+							<input type="checkbox" name="depende[]" id="Hermano" value="hermano">
 							<label for="Hermano" >Hermano/a</label>
-							<input type="checkbox" name="Padres" id="Padres">
+							<input type="checkbox" name="depende[]" id="Padres" value="padre">
 							<label for="Padres" >Padres</label>
-							<input type="checkbox" name="Otros" id="Otros">
+							<input type="checkbox" name="depende[]" id="Otros" value="otro">
 							<label for="Otros" >Otros</label>
 						</div>
 					</p>
@@ -118,9 +118,9 @@
 						<div class="col-md-0"></div>
 						<div class="col-md-4">
 							<div class="radio">
-								<input type="radio" name="siNo" id="si">
+								<input type="radio" name="siNo" id="si" value="si">
 								<label for="si">No</label>
-								<input type="radio" name="siNo" id="no">
+								<input type="radio" name="siNo" id="no" value="no">
 								<label for="no">Si (Explique)</label>
 							</div>
 						</div>
@@ -144,7 +144,7 @@
 							<input type="text" name="anioBasica" required>
 							<br>
 							<a>Certificado</a>
-							<input type="file" value="Enviar" class="btn-sm btn-block btn-primary" required>
+							<input type="file" class="btn-sm btn-block btn-primary" name="certificacionBasica" required>
 						</div>
 						<div class="col-md-4"> 
 							<h4>Enseñanza media:</h4>
@@ -155,7 +155,7 @@
 							<input type="text" name="anioMedia" required>
 							<br>
 							<a>Certificado</a>
-							<input type="file" value="Enviar" class="btn-sm btn-block btn-primary" id="certificacionMedia" name="certificacionMedia" required>
+							<input type="file" class="btn-sm btn-block btn-primary" id="certificacionMedia" name="certificacionMedia" required>
 						</div>
 						<div class="col-md-4">
 							<h4>Enseñanza Superior:</h4>
@@ -166,13 +166,14 @@
 							<input type="text" name="anioSuperior" required>
 							<br>
 							<a>Certificado</a>
-							<input type="file" class="btn-sm btn-block btn-primary" id="CertificadacionSuperior" name="CertificadacionSuperior" required>
+							<input type="file" class="btn-sm btn-block btn-primary" id="CertificadacionSuperior" name="certificadacionSuperior" required>
 						</div>
 					</div>
 				</div>
+				<br>
+				<input type="submit" name="btnEnviar" value="Enviar" class="btn btn-block btn-primary" id="enviar">
 			</form>
 			<br>
-			<input type="submit" value="Enviar" class="btn btn-block btn-primary" id="enviar">
 		</div>
 	</body>
 </html> 
