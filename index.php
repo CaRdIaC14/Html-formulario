@@ -27,7 +27,7 @@
 				</nav>
 			</header>
 		
-			<form action="insertarBD.php" method="POST" class="formulario">
+			<form action="insertarBD.php" method="POST" class="formulario" enctype="multipart/form-data">
 				<div id="titulo">
 					<h2>Solicitud de Empleo</h2>
 				</div>
@@ -38,7 +38,7 @@
 				<div class="datosPersonales">
 					<p>
 						<label for="nombre">Nombre:</label>
-						<input type="text" name="nombre"id="nombre" placeholder="Juan"  required>
+						<input type="text" name="nombre" id="nombre" placeholder="Juan"  required>
 					</p>
 					<p>
 						<label for="apellido">Apellido:</label>
