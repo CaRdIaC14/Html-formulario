@@ -30,11 +30,10 @@ header{
 
 .menu{
     width: 340px;   
-    height: 44px;
-    border: 1px solid #020202;
+    height: 35px;
     float: right;
-    margin-top: 87px;
-    background: rgb(255, 255, 255);
+    margin-top: 95px;
+    background: rgb(195,195,195);
     
 }
 
@@ -46,7 +45,7 @@ header{
 .menu ul li a{
     text-decoration: none;
     padding: 10px 15px;
-    color: rgb(0, 0, 0);
+    color: black;
 }
 
 #titulo{
@@ -68,6 +67,17 @@ header{
     padding: 10px 100px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+.formularioEliminar{
+    /* border:1px solid rgb(2, 0, 0); */
+    margin-bottom: 10px;
+}
+.btnEliminar{
+    padding-left: 90%;
+}
+
+.depende{
+    padding-left: 30px;
 }
 
 .formulario .datosPersonales .block,

@@ -7,8 +7,10 @@
 		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 		<link rel="icon" type="image/png" href="Img\logo.png">
 		<link rel="stylesheet" href="css/estilo.css">
-		<link rel="stylesheet" href="bootstrap4/css/bootstrap-reboot.min.css">
-		<link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 		<title>Formulario</title>
 	</head>
 	
@@ -19,8 +21,110 @@
 					<img src="Img\logo.png" class="imagen">
 				</div>
 				<nav class="menu">
+					<div class="modal fade" id="modal1" tabindex="-1" role="dialog">
+						<div class="modal-dialog modal-sm modal-xs modal-md modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h2>Eliminar Solicitud de Empleo</h2>
+								</div>
+
+								<div class="modal-body">
+									<?php
+										include ("conexion.php");
+										$query="SELECT * FROM datospersonales";
+										$res=$conexion->query($query);
+										while($row =$res->fetch_assoc()){
+											?><form action="eliminar.php" method="POST" class="formularioEliminar">
+												<div class="row">
+													<div class="col-md-6">
+														<?php 
+															echo "Nombre: ".$row["nombre"]." ".$row["apellido"] ."<br>";
+															echo "Rut: ",$row["rut"]."<br>";
+															echo "Direccion actual: ",$row["dirreccion"]."<br>";
+															echo "Grado de estudio: ",$row["grado"]."<br>";
+															echo "Estado civil: ",$row["estadoCivil"]."<br>";
+														?>
+													</div>
+													<div class="col-md-6">
+														<?php 
+															echo "Fecha de nacimiento : ",$row["fechaNacimiento"]."<br>";
+															echo "Telefono: ",$row["telefono"]."<br>";
+															echo "Nacionalidad: ",$row["nacionalidad"]."<br>";
+															echo "Vive con: ",$row["vive"]."<br>";
+															if($row["estadoSalud"]!="NULL"){
+																echo "Estado salud: ".$row["estadoSalud"]."<br>";
+															}			
+														?>
+													</div>
+												</div>
+												<?php
+
+												if ($row["espaso"]=="si" || $row["hijo"]=="si" || $row["hermano"]=="si" || $row["padre"]=="si" || $row["otros"]=="si"){
+													echo "Personas que dependen de usted:<br>";
+													?>
+													<div class="depende"><?php		
+														if($row["espaso"]=="si"){
+															echo "-Esposo/a <br>";
+														}
+														if($row["hijo"]=="si"){
+															echo "-Hijo/a <br>";
+														}
+														if($row["hermano"]=="si"){
+															echo "-Hermano/a <br>";
+														}
+														if($row["padre"]=="si"){
+															echo "-Padres <br>";
+														}
+														if($row["otros"]=="si"){
+															echo "-Otro <br>";
+														}
+													?></div><?php
+													
+												}
+												?>
+												<div class="row">
+													<div class="col-md-4">
+														<?php
+														echo "Nombre escuela basica: ".$row["nombreBasica"]."<br>";
+														echo "Años de estudio: ".$row["anioBasica"]."<br>";
+														echo "Certidicado:<br>";
+														?>
+														<img src="data:image/jpg;base64,<?php echo base64_encode($row["certificadoBasica"]); ?>",width="100px", height="100px">
+													</div>
+													<div class="col-md-4">
+														<?php
+														echo "Nombre escuela basica: ".$row["nombreMedia"]."<br>";
+														echo "Años de estudio: ".$row["anioMedia"]."<br>";
+														echo "Certidicado:<br>";
+														?>
+														<img src="data:image/jpg;base64,<?php echo base64_encode($row["certificadoMedia"]); ?>",width="100px", height="100px">
+													</div>
+													<div class="col-md-4">
+															<?php
+														echo "Nombre escuela basica: ".$row["nombreSuperior"]."<br>";
+														echo "Años de estudio: ".$row["anioSuperior"]."<br>";
+														echo "Certidicado:<br>";
+														?>
+														<img src="data:image/jpg;base64,<?php echo base64_encode($row["certificadoSuperior"]); ?>",width="100px", height="100px">
+													</div>
+												</div>
+												<input type="hidden" name="rut" value="<?php echo $row["rut"];?>">
+												<div class="btnEliminar">
+													<input type="submit" class="btn btn-danger" value="Eliminar">
+												</div>
+											</form>
+											<?php
+									}?>
+								</div>
+
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary">Cerrar</button>
+								</div>
+							</div>
+						</div>
+					</div>
 					<ul>
-						<li><a href="contruccion.html">Enlace 1</a></li>
+						<li><a data-toggle="modal" data-target="#modal1" href="">Eliminar</a></li>
 						<li><a href="contruccion.html">Enlace 2</a></li>
 						<li><a href="contruccion.html">Enlace 3</a></li>
 					</ul>
