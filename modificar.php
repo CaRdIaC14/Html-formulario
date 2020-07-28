@@ -1,3 +1,27 @@
+<?php
+    $nombre=$_POST["nombre"];
+    $apellido=$_POST["apellido"];
+    $fechaNacimiento=$_POST["fechaNacimiento"];
+    $rut=$_POST["rut"];
+    $telefono=$_POST["telefono"];
+    $dirreccion=$_POST["dirreccion"];
+    $nacionalidad=$_POST["nacionalidad"];
+    $grado=$_POST["grado"];
+	$vive=$_POST["vive"];
+	$estadoCivil=$_POST["estadoCivil"];
+	$estadoSalud=$_POST["estadoSalud"];
+	$espaso=$_POST["espaso"];
+	$hijo=$_POST["hijo"];
+	$hermano=$_POST["hermano"];
+	$padre=$_POST["padre"];
+	$otros=$_POST["otros"];
+    $nombreBasica=$_POST["nombreBasica"];
+    $anioBasica=$_POST["anioBasica"];
+    $nombreMedia=$_POST["nombreMedia"];
+    $anioMedia=$_POST["anioMedia"];
+    $nombreSuperior=$_POST["nombreSuperior"];
+	$anioSuperior=$_POST["anioSuperior"];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -127,7 +151,7 @@
 						<div class="modal-dialog modal-sm modal-xs modal-md modal-lg">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h2>Modificar Solicitud de Empleo</h2>
+									<h2>Eliminar Solicitud de Empleo</h2>
 								</div>
 
 								<div class="modal-body">
@@ -181,6 +205,7 @@
 															echo "-Otro <br>";
 														}
 													?></div><?php
+													
 												}
 												?>
 												<div class="row">
@@ -219,40 +244,12 @@
 												<input type="hidden" name="telefono" value="<?php echo $row["telefono"];?>">
 												<input type="hidden" name="nacionalidad" value="<?php echo $row["nacionalidad"];?>">
 												<input type="hidden" name="vive" value="<?php echo $row["vive"];?>">
-												<input type="hidden" name="espaso" value="">
-												<input type="hidden" name="hijo" value="">
-												<input type="hidden" name="hermano" value="">
-												<input type="hidden" name="padre" value="">
-												<input type="hidden" name="otros" value="">
-												<?php
-													if($row["espaso"]=="si"){?>
-														<input type="hidden" name="espaso" value="<?php echo $row["espaso"];?>">
-													<?php
-													}
-													if($row["espaso"]=="si"){?>
-														<input type="hidden" name="hijo" value="<?php echo $row["hijo"];?>">
-													<?php
-													}
-													if($row["espaso"]=="si"){?>
-														<input type="hidden" name="hermano" value="<?php echo $row["hermano"];?>">
-													<?php
-													}
-													if($row["espaso"]=="si"){?>
-														<input type="hidden" name="padre" value="<?php echo $row["padre"];?>">
-													<?php
-													}
-													if($row["espaso"]=="si"){?>
-														<input type="hidden" name="otros" value="<?php echo $row["otros"];?>">
-													<?php
-													}
+												<?php 
 													if($row["estadoSalud"]!="NULL"){?>
 														<input type="hidden" name="estadoSalud" value="<?php echo $row["estadoSalud"];?>">
 													<?php
-													}
-													else{?>
-														<input type="hidden" name="estadoSalud" value="">
-														<?php
-													}?>
+													}		
+												?>
 												<input type="hidden" name="nombreBasica" value="<?php echo $row["nombreBasica"];?>">
 												<input type="hidden" name="anioBasica" value="<?php echo $row["anioBasica"];?>">
 												<input type="hidden" name="nombreMedia" value="<?php echo $row["nombreMedia"];?>">
@@ -260,7 +257,7 @@
 												<input type="hidden" name="nombreSuperior" value="<?php echo $row["nombreSuperior"];?>">
 												<input type="hidden" name="anioSuperior" value="<?php echo $row["anioSuperior"];?>">
 												<div class="btnEliminar">
-													<input type="submit" name="btnModificar" class="btn btn-primary" value="Modificar">
+													<input type="submit" name="btnModificar" class="btn btn-" value="Modificar">
 												</div>
 											</form>
 											<?php
@@ -281,7 +278,7 @@
 				</nav>
 			</header>
 		
-			<form action="insertarBD.php" method="POST" class="formulario" enctype="multipart/form-data">
+			<form action="modificarBD.php" method="POST" class="formulario" enctype="multipart/form-data">
 				<div id="titulo">
 					<h2>Solicitud de Empleo</h2>
 				</div>
@@ -292,72 +289,72 @@
 				<div class="datosPersonales">
 					<p>
 						<label for="nombre">Nombre:</label>
-						<input type="text" name="nombre" id="nombre" placeholder="Juan"  required>
+						<input type="text" name="nombre" id="nombre" value="<?php echo $nombre;?>"required>
 					</p>
 					<p>
 						<label for="apellido">Apellido:</label>
-						<input type="text" name="apellido" id="apellido" placeholder="Perez" required>
+						<input type="text" name="apellido" id="apellido" value="<?php echo $apellido;?>" required>
 					</p>
 					<p>
 						<label for="nacimiento">Fecha de nacimiento:</label>
-						<input type="date" name="nacimiento"id="nacimiento value="01-01-2020" " required>
+						<input type="date" name="nacimiento"id="nacimiento "value="<?php echo $fechaNacimiento;?>" " required>
 					</p>
 					<p>
 						<label for="rut">Rut:</label>
-						<input type="text" name="rut" id="rut" placeholder="12.345.678-9" maxlength="12" required >
+						<input type="text" name="rut" id="rut" value="<?php echo $rut;?>" maxlength="12" required >
 					</p>
 					<p>
 						<label for="telefono">Telefono:</label>
-						<input type="tel" id="telefono" id="telefono" name="telefono"placeholder="12345678" pattern="[0-9]{8}">
+						<input type="tel" id="telefono" id="telefono" name="telefono" value="<?php echo $telefono;?>"" pattern="[0-9]{8}">
 					</p>
 					<p>
 						<label for="direccion">Direccion actual:</label>	
-						<input type="text" name="direccion" id="direccion" placeholder=" calle 123 poblacion"  required>
+						<input type="text" name="direccion" id="direccion" value="<?php echo $dirreccion;?>"  required>
 					</p>
 					<p>
 						<label for="nacionalidad">Nacionalidad:</label>
-						<input type="text" id="nacionalidad" name="nacionalidad"  required>
+						<input type="text" id="nacionalidad" name="nacionalidad" value="<?php echo $nacionalidad;?>"  required>
 					</p>
 					<p>
 						<label for="grado">Grado de estudio:</label>
-						<input type="text" name="grado" id="grado"  required>
+						<input type="text" name="grado" id="grado" value="<?php echo $grado;?>"  required>
 					</p>
 					<p class="block">
 						<label for="civil">Estado civil:</label>
 						<div class="radio">
-							<input type="radio" name="estadoCivil"  id="soltero" value="soltero">
+							<input type="radio" name="estadoCivil" <?php if (isset($estadoCivil) && $estadoCivil=="soltero") echo "checked";?> id="soltero" value="soltero">
 							<label for="soltero">Soltero</label>
-							<input type="radio" name="estadoCivil"id="casado" value="casado">
+							<input type="radio" name="estadoCivil" <?php if (isset($estadoCivil) && $estadoCivil=="casado") echo "checked";?> id="casado" value="casado">
 							<label for="casado">Casado</label>
-							<input type="radio" name="estadoCivil" id ="otro" value="otro">
+							<input type="radio" name="estadoCivil" <?php if (isset($estadoCivil) && $estadoCivil=="otro") echo "checked";?> id ="otro" value="otro">
 							<label for="otro">Otro</label>
 						</div>
 					</p>
 					<p class=" block">
 						<label for="Vive">Vive con:</label>
 						<div class="radio">
-							<input type="radio" name="vive" id ="solo" value="solo">
+							<input type="radio" name="vive" <?php if (isset($vive) && $vive=="solo") echo "checked";?> id ="solo" value="solo">
 							<label for="solo">Solo/a</label>
-							<input type="radio" name="vive"id ="padres" value="padres">
+							<input type="radio" name="vive" <?php if (isset($vive) && $vive=="padres") echo "checked";?> id ="padres" value="padres">
 							<label for="padres">Padres</label>
-							<input type="radio" name="vive"id ="familiares" value="familiares">
+							<input type="radio" name="vive" <?php if (isset($vive) && $vive=="familiares") echo "checked";?> id ="familiares" value="familiares">
 							<label for="familiares">Familiares</label>
-							<input type="radio" name="vive"id ="otros" value="otros">
+							<input type="radio" name="vive" <?php if (isset($vive) && $vive=="otros") echo "checked";?> id ="otros" value="otros">
 							<label for="otros">Otro</label>
 						</div>
 					</p>
 					<p class="block">
 						<label for="depende">Personas que dependen de usted:</label>
 						<div class="checkbox">
-							<input type="checkbox" name="depende[]" id="Esposo" value="esposo">
+							<input type="checkbox" name="depende[]" <?php if (isset($espaso) && $espaso=="si") echo "checked";?> id="Esposo" value="esposo">
 							<label for="Esposo" >Esposo/a</label>
-							<input type="checkbox" name="depende[]" id="Hijos" value="hijos">
-							<label for="Hijos" >Hijos</label>
-							<input type="checkbox" name="depende[]" id="Hermano" value="hermano">
+							<input type="checkbox" name="depende[]" <?php if (isset($hijo) && $hijo=="si") echo "checked";?> id="Hijos" value="hijos">
+							<label for="Hijos" >Hijos</label> 
+							<input type="checkbox" name="depende[]" <?php if (isset($hermano) && $hermano=="si") echo "checked";?> id="Hermano" value="hermano">
 							<label for="Hermano" >Hermano/a</label>
-							<input type="checkbox" name="depende[]" id="Padres" value="padre">
+							<input type="checkbox" name="depende[]" <?php if (isset($padre) && $padre=="si") echo "checked";?> id="Padres" value="padre">
 							<label for="Padres" >Padres</label>
-							<input type="checkbox" name="depende[]" id="Otros" value="otro">
+							<input type="checkbox" name="depende[]" <?php if (isset($otros) && $otros=="si") echo "checked";?> id="Otros" value="otro">
 							<label for="Otros" >Otros</label>
 						</div>
 					</p>
@@ -372,14 +369,14 @@
 						<div class="col-md-0"></div>
 						<div class="col-md-4">
 							<div class="radio">
-								<input type="radio" name="siNo" id="si" value="si">
+								<input type="radio" name="siNo" <?php if (isset($estadoSalud) && $estadoSalud=="") echo "checked";?> id="si" value="si">
 								<label for="si">No</label>
-								<input type="radio" name="siNo" id="no" value="no">
+								<input type="radio" name="siNo" <?php if (isset($estadoSalud) && $estadoSalud!="") echo "checked";?> id="no" value="no">
 								<label for="no">Si (Explique)</label>
 							</div>
 						</div>
 						<div class="col-md-8">
-							<textarea name="explicacion" id="textArea" ></textarea>
+							<textarea name="explicacion" id="textArea"><?php echo $estadoSalud;?></textarea>
 						</div>	
 					</div>
 				</div>
@@ -392,35 +389,35 @@
 						<div class="col-md-4">
 							<h4>Enseñanza basica:</h4>
 							<a>Nombre escuela:</a>
-							<input type="text" name="escuelaBasica"required>
+							<input type="text" name="escuelaBasica" value="<?php echo $nombreBasica;?>" required>
 							<br>
 							<a>Años de estudios:</a>
-							<input type="text" name="anioBasica" required>
+							<input type="text" name="anioBasica" value="<?php echo $anioBasica;?>"  required>
 							<br>
 							<a>Certificado</a>
-							<input type="file" class="btn-sm btn-block btn-primary" name="certificacionBasica" required>
+							<input type="file" class="btn-sm btn-block btn-primary" name="certificacionBasica" >
 						</div>
 						<div class="col-md-4"> 
 							<h4>Enseñanza media:</h4>
 							<a>Nombre escuela</a>
-							<input type="text" name="escuelaMedia"required>
+							<input type="text" name="escuelaMedia" value="<?php echo $nombreMedia;?>"  required>
 							<br>
 							<a>Años de estudios:</a>
-							<input type="text" name="anioMedia" required>
+							<input type="text" name="anioMedia" value="<?php echo $anioMedia;?>"  required>
 							<br>
 							<a>Certificado</a>
-							<input type="file" class="btn-sm btn-block btn-primary" id="certificacionMedia" name="certificacionMedia" required>
+							<input type="file" class="btn-sm btn-block btn-primary" id="certificacionMedia" name="certificacionMedia" >
 						</div>
 						<div class="col-md-4">
 							<h4>Enseñanza Superior:</h4>
 							<a>Nombre Universidad:</a>
-							<input type="text" name="universidad"required>
+							<input type="text" name="universidad" value="<?php echo $nombreSuperior;?>" required>
 							<br>
 							<a>Años de estudios:</a>
-							<input type="text" name="anioSuperior" required>
+							<input type="text" name="anioSuperior" value="<?php echo $anioSuperior;?>" required>
 							<br>
 							<a>Certificado</a>
-							<input type="file" class="btn-sm btn-block btn-primary" id="CertificadacionSuperior" name="certificadacionSuperior" required>
+							<input type="file" class="btn-sm btn-block btn-primary" id="CertificadacionSuperior" name="certificadacionSuperior" >
 						</div>
 					</div>
 				</div>
