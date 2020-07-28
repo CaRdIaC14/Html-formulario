@@ -53,22 +53,36 @@
         }
         $nombreBasica=$_POST["escuelaBasica"];
         $anioBasica=$_POST["anioBasica"];
-        $certificadoBasica= addslashes(file_get_contents($_FILES["certificacionBasica"]["tmp_name"]));
-
+        if(is_file(addslashes($_FILES["certificacionBasica"]["tmp_name"]))) {
+            $certificadoBasica= addslashes(file_get_contents($_FILES["certificacionBasica"]["tmp_name"]));
+            $query="UPDATE datospersonales SET certificadoBasica=$certificadoBasica WHERE rut=$rut";
+            $conexion->query($query);
+        } 
+        
         $nombreMedia=$_POST["escuelaMedia"];
         $anioMedia=$_POST["anioMedia"];
-        $certificadoMedia= addslashes(file_get_contents($_FILES["certificacionMedia"]["tmp_name"]));
+        if(is_file(addslashes($_FILES["certificacionMedia"]["tmp_name"]))) {
+            $certificadoMedia= addslashes(file_get_contents($_FILES["certificacionMedia"]["tmp_name"]));
+            $query="UPDATE datospersonales SET certificadoBasica=$certificadoBasica WHERE rut=$rut";
+            $conexion->query($query);
+        }
 
         $nombreSuperior=$_POST["universidad"];
         $anioSuperior=$_POST["anioSuperior"];
-        $certificadoSuperior= addslashes(file_get_contents($_FILES["certificadacionSuperior"]["tmp_name"]));
+        if(is_file(addslashes($_FILES["certificadacionSuperior"]["tmp_name"]))) {
+            $certificadoSuperior= addslashes(file_get_contents($_FILES["certificadacionSuperior"]["tmp_name"]));
+            $query="UPDATE datospersonales SET certificadoBasica=$certificadoBasica WHERE rut=$rut";
+            $conexion->query($query);
+        } 
 
-        $query="INSERT INTO datospersonales(nombre, apellido, fechaNacimiento, rut, telefono, dirreccion, nacionalidad, grado, estadoCivil, vive, espaso, hijo, hermano, padre, otros, estadoSalud, nombreBasica, anioBasica, certificadoBasica, nombreMedia, anioMedia, certificadoMedia, nombreSuperior, anioSuperior, certificadoSuperior) 
-        VALUES ('$nombre','$apellido','$nacimiento','$rut','$telefono','$direccion','$nacionalidad','$grado','$estadoCivil','$vive','$depende[0]','$depende[1]','$depende[2]','$depende[3]','$depende[4]','$estadoSalud','$nombreBasica',$anioBasica,'$certificadoBasica','$nombreMedia',$anioMedia,'$certificadoMedia',' $nombreSuperior',$anioSuperior,'$certificadoSuperior')";
-        if ($conexion->query($query) === TRUE) {
-            echo "Solicitud enviada correctamente";
-        } else {
+        $query="UPDATE datospersonales SET nombre='$nombre',apellido='$apellido',fechaNacimiento='$nacimiento',rut='$rut',telefono=$telefono,dirreccion='$direccion',nacionalidad='$nacionalidad',
+        grado='$grado',estadoCivil='$estadoCivil',vive='$vive',espaso='$depende[0]',hijo='$depende[1]',hermano='$depende[2]',padre='$depende[3]',otros='$depende[4]',estadoSalud='$estadoSalud',
+        nombreBasica='$nombreBasica',anioBasica='$anioBasica',nombreMedia='$nombreMedia',anioMedia='$anioBasica',nombreSuperior='$nombreSuperior',anioSuperior='$anioSuperior' WHERE rut=$rut";
+        if(!$conexion->query($query)){
             echo "Error: Verifique los datos";
+        }
+        else{
+            echo "Solicitud modificada correctamente";
         }
     }
 ?>

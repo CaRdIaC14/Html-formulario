@@ -45,7 +45,7 @@
 					<img src="Img\logo.png" class="imagen">
 				</div>
 				<nav class="menu">
-					<div class="modal fade" id="eliminar" tabindex="-1" role="dialog">
+				<div class="modal fade" id="eliminar" tabindex="-1" role="dialog">
 						<div class="modal-dialog modal-sm modal-xs modal-md modal-lg">
 							<div class="modal-content">
 								<div class="modal-header">
@@ -147,138 +147,15 @@
 							</div>
 						</div>
 					</div>
-					<div class="modal fade" id="modificar" tabindex="-1" role="dialog">
-						<div class="modal-dialog modal-sm modal-xs modal-md modal-lg">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h2>Eliminar Solicitud de Empleo</h2>
-								</div>
-
-								<div class="modal-body">
-									<?php
-										include ("conexion.php");
-										$query="SELECT * FROM datospersonales";
-										$res=$conexion->query($query);
-										while($row =$res->fetch_assoc()){
-											?><form action="modificar.php" method="POST" class="formularioEliminar">
-												<div class="row">
-													<div class="col-md-6">
-														<?php 
-															echo "Nombre: ".$row["nombre"]." ".$row["apellido"] ."<br>";
-															echo "Rut: ",$row["rut"]."<br>";
-															echo "Direccion actual: ",$row["dirreccion"]."<br>";
-															echo "Grado de estudio: ",$row["grado"]."<br>";
-															echo "Estado civil: ",$row["estadoCivil"]."<br>";
-														?>
-													</div>
-													<div class="col-md-6">
-														<?php 
-															echo "Fecha de nacimiento : ",$row["fechaNacimiento"]."<br>";
-															echo "Telefono: ",$row["telefono"]."<br>";
-															echo "Nacionalidad: ",$row["nacionalidad"]."<br>";
-															echo "Vive con: ",$row["vive"]."<br>";
-															if($row["estadoSalud"]!="NULL"){
-																echo "Estado salud: ".$row["estadoSalud"]."<br>";
-															}			
-														?>
-													</div>
-												</div>
-												<?php
-
-												if ($row["espaso"]=="si" || $row["hijo"]=="si" || $row["hermano"]=="si" || $row["padre"]=="si" || $row["otros"]=="si"){
-													echo "Personas que dependen de usted:<br>";
-													?>
-													<div class="depende"><?php		
-														if($row["espaso"]=="si"){
-															echo "-Esposo/a <br>";
-														}
-														if($row["hijo"]=="si"){
-															echo "-Hijo/a <br>";
-														}
-														if($row["hermano"]=="si"){
-															echo "-Hermano/a <br>";
-														}
-														if($row["padre"]=="si"){
-															echo "-Padres <br>";
-														}
-														if($row["otros"]=="si"){
-															echo "-Otro <br>";
-														}
-													?></div><?php
-													
-												}
-												?>
-												<div class="row">
-													<div class="col-md-4">
-														<?php
-														echo "Nombre escuela basica: ".$row["nombreBasica"]."<br>";
-														echo "Años de estudio: ".$row["anioBasica"]."<br>";
-														echo "Certidicado:<br>";
-														?>
-														<img src="data:image/jpg;base64,<?php echo base64_encode($row["certificadoBasica"]); ?>",width="100px", height="100px">
-													</div>
-													<div class="col-md-4">
-														<?php
-														echo "Nombre escuela basica: ".$row["nombreMedia"]."<br>";
-														echo "Años de estudio: ".$row["anioMedia"]."<br>";
-														echo "Certidicado:<br>";
-														?>
-														<img src="data:image/jpg;base64,<?php echo base64_encode($row["certificadoMedia"]); ?>",width="100px", height="100px">
-													</div>
-													<div class="col-md-4">
-															<?php
-														echo "Nombre escuela basica: ".$row["nombreSuperior"]."<br>";
-														echo "Años de estudio: ".$row["anioSuperior"]."<br>";
-														echo "Certidicado:<br>";
-														?>
-														<img src="data:image/jpg;base64,<?php echo base64_encode($row["certificadoSuperior"]); ?>",width="100px", height="100px">
-													</div>
-												</div>
-												<input type="hidden" name="nombre" value="<?php echo $row["nombre"];?>">
-												<input type="hidden" name="apellido" value="<?php echo $row["apellido"];?>">
-												<input type="hidden" name="rut" value="<?php echo $row["rut"];?>">
-												<input type="hidden" name="dirreccion" value="<?php echo $row["dirreccion"];?>">
-												<input type="hidden" name="grado" value="<?php echo $row["grado"];?>">
-												<input type="hidden" name="estadoCivil" value="<?php echo $row["estadoCivil"];?>">
-												<input type="hidden" name="fechaNacimiento" value="<?php echo $row["fechaNacimiento"];?>">
-												<input type="hidden" name="telefono" value="<?php echo $row["telefono"];?>">
-												<input type="hidden" name="nacionalidad" value="<?php echo $row["nacionalidad"];?>">
-												<input type="hidden" name="vive" value="<?php echo $row["vive"];?>">
-												<?php 
-													if($row["estadoSalud"]!="NULL"){?>
-														<input type="hidden" name="estadoSalud" value="<?php echo $row["estadoSalud"];?>">
-													<?php
-													}		
-												?>
-												<input type="hidden" name="nombreBasica" value="<?php echo $row["nombreBasica"];?>">
-												<input type="hidden" name="anioBasica" value="<?php echo $row["anioBasica"];?>">
-												<input type="hidden" name="nombreMedia" value="<?php echo $row["nombreMedia"];?>">
-												<input type="hidden" name="anioMedia" value="<?php echo $row["anioMedia"];?>">
-												<input type="hidden" name="nombreSuperior" value="<?php echo $row["nombreSuperior"];?>">
-												<input type="hidden" name="anioSuperior" value="<?php echo $row["anioSuperior"];?>">
-												<div class="btnEliminar">
-													<input type="submit" name="btnModificar" class="btn btn-" value="Modificar">
-												</div>
-											</form>
-											<?php
-									}?>
-								</div>
-
-								<div class="modal-footer">
-									<button type="button" class="btn btn-primary">Cerrar</button>
-								</div>
-							</div>
-						</div>
-					</div>
 					<ul>
 						<li><a data-toggle="modal" data-target="#eliminar" href="">Eliminar</a></li>
-						<li><a data-toggle="modal" data-target="#modificar" href="">Modificar</a></li>
+						<li><a href="index.php">Insertar</a></li>
 						<li><a href="contruccion.html">Enlace 3</a></li>
 					</ul>
 				</nav>
 			</header>
 		
-			<form action="modificarBD.php" method="POST" class="formulario" enctype="multipart/form-data">
+			<form action="modificarBD.php" method="POST" class="formulario" target="mostrar" enctype="multipart/form-data">
 				<div id="titulo">
 					<h2>Solicitud de Empleo</h2>
 				</div>
@@ -369,9 +246,9 @@
 						<div class="col-md-0"></div>
 						<div class="col-md-4">
 							<div class="radio">
-								<input type="radio" name="siNo" <?php if (isset($estadoSalud) && $estadoSalud=="") echo "checked";?> id="si" value="si">
+								<input type="radio" name="siNo" <?php if (isset($estadoSalud) && $estadoSalud=="") echo "checked";?> id="si" value="no">
 								<label for="si">No</label>
-								<input type="radio" name="siNo" <?php if (isset($estadoSalud) && $estadoSalud!="") echo "checked";?> id="no" value="no">
+								<input type="radio" name="siNo" <?php if (isset($estadoSalud) && $estadoSalud!="") echo "checked";?> id="no" value="si">
 								<label for="no">Si (Explique)</label>
 							</div>
 						</div>
@@ -425,6 +302,8 @@
 				<input type="submit" name="btnEnviar" value="Enviar" class="btn btn-block btn-primary" id="enviar">
 			</form>
 			<br>
+			<iframe name="mostrar" src="modificarBD.php" frameborder="0">
+			</iframe>
 		</div>
 	</body>
 </html> 

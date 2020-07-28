@@ -229,19 +229,19 @@
 														<input type="hidden" name="espaso" value="<?php echo $row["espaso"];?>">
 													<?php
 													}
-													if($row["espaso"]=="si"){?>
+													if($row["hijo"]=="si"){?>
 														<input type="hidden" name="hijo" value="<?php echo $row["hijo"];?>">
 													<?php
 													}
-													if($row["espaso"]=="si"){?>
+													if($row["hermano"]=="si"){?>
 														<input type="hidden" name="hermano" value="<?php echo $row["hermano"];?>">
 													<?php
 													}
-													if($row["espaso"]=="si"){?>
+													if($row["padre"]=="si"){?>
 														<input type="hidden" name="padre" value="<?php echo $row["padre"];?>">
 													<?php
 													}
-													if($row["espaso"]=="si"){?>
+													if($row["otros"]=="si"){?>
 														<input type="hidden" name="otros" value="<?php echo $row["otros"];?>">
 													<?php
 													}
@@ -281,7 +281,7 @@
 				</nav>
 			</header>
 		
-			<form action="insertarBD.php" method="POST" class="formulario" enctype="multipart/form-data">
+			<form action="insertarBD.php" method="POST" class="formulario" target="mostrar" enctype="multipart/form-data">
 				<div id="titulo">
 					<h2>Solicitud de Empleo</h2>
 				</div>
@@ -372,9 +372,9 @@
 						<div class="col-md-0"></div>
 						<div class="col-md-4">
 							<div class="radio">
-								<input type="radio" name="siNo" id="si" value="si">
+								<input type="radio" name="siNo" id="si" value="no">
 								<label for="si">No</label>
-								<input type="radio" name="siNo" id="no" value="no">
+								<input type="radio" name="siNo" id="no" value="si">
 								<label for="no">Si (Explique)</label>
 							</div>
 						</div>
@@ -428,6 +428,8 @@
 				<input type="submit" name="btnEnviar" value="Enviar" class="btn btn-block btn-primary" id="enviar">
 			</form>
 			<br>
+			<iframe name="mostrar" src="insertarBD.php" frameborder="0">
+			</iframe>
 		</div>
 	</body>
 </html> 
