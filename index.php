@@ -276,7 +276,7 @@
 					<ul>
 						<li><a data-toggle="modal" data-target="#eliminar" href="">Eliminar</a></li>
 						<li><a data-toggle="modal" data-target="#modificar" href="">Modificar</a></li>
-						<li><a href="contruccion.html">Enlace 3</a></li>
+						<li><a href="mostrar.php">Mostrar</a></li>
 					</ul>
 				</nav>
 			</header>
